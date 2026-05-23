@@ -1,0 +1,107 @@
+/* ================================================
+   BEZZIE — KEYFRAME ANIMATIONS
+   ================================================ */
+
+@keyframes fadeSlideUp {
+  from { opacity:0; transform:translateY(30px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes lineReveal {
+  from { transform:translateY(110%); }
+  to   { transform:translateY(0); }
+}
+@keyframes loadBar {
+  to { width:100%; }
+}
+@keyframes scrollDrop {
+  0%   { top:-100%; }
+  100% { top:200%; }
+}
+@keyframes portalSpin {
+  to { transform:translate(-50%,-50%) rotate(360deg); }
+}
+@keyframes portalPulse {
+  0%,100% { opacity:0.4; transform:translate(-50%,-50%) scale(1); }
+  50%      { opacity:1;   transform:translate(-50%,-50%) scale(1.15); }
+}
+@keyframes trishulFloat {
+  0%,100% { transform:translate(-50%,-55%) translateY(0); }
+  50%      { transform:translate(-50%,-55%) translateY(-8px); }
+}
+@keyframes cloudRise {
+  0%   { transform:translateY(0) scaleX(1); opacity:0.3; }
+  100% { transform:translateY(-60px) scaleX(1.1); opacity:0; }
+}
+@keyframes goldShimmer {
+  0%,100% { background-position:0% 50%; }
+  50%      { background-position:100% 50%; }
+}
+@keyframes particleDrift {
+  0%   { transform:translateY(0) translateX(0); opacity:0; }
+  10%  { opacity:1; }
+  90%  { opacity:0.8; }
+  100% { transform:translateY(-120px) translateX(30px); opacity:0; }
+}
+@keyframes glowPulse {
+  0%,100% { box-shadow:0 0 20px rgba(212,175,55,0.15); }
+  50%      { box-shadow:0 0 40px rgba(212,175,55,0.4),0 0 80px rgba(212,175,55,0.15); }
+}
+@keyframes orbFloat {
+  0%,100% { transform:translateY(0) rotate(0deg); }
+  33%      { transform:translateY(-15px) rotate(120deg); }
+  66%      { transform:translateY(8px) rotate(240deg); }
+}
+@keyframes timelineDraw {
+  from { height:0; }
+  to   { height:100%; }
+}
+@keyframes markerPop {
+  0%   { transform:scale(0) rotate(-45deg); opacity:0; }
+  70%  { transform:scale(1.2) rotate(5deg); }
+  100% { transform:scale(1) rotate(0deg); opacity:1; }
+}
+@keyframes inscriptionReveal {
+  from { opacity:0; transform:translateY(40px) rotateX(15deg); }
+  to   { opacity:1; transform:translateY(0) rotateX(0deg); }
+}
+@keyframes cloudDrift {
+  0%   { transform:translateX(-5%) scaleY(1); opacity:0.6; }
+  50%  { opacity:0.9; scaleY:1.05; }
+  100% { transform:translateX(5%) scaleY(1); opacity:0.6; }
+}
+@keyframes fogFloat {
+  0%   { transform:translateX(0) scaleX(1); }
+  50%  { transform:translateX(3%) scaleX(1.03); }
+  100% { transform:translateX(0) scaleX(1); }
+}
+@keyframes countUp {
+  from { content:"0"; }
+}
+@keyframes fadeIn {
+  from { opacity:0; }
+  to   { opacity:1; }
+}
+@keyframes slideInLeft {
+  from { opacity:0; transform:translateX(-60px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity:0; transform:translateX(60px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes lineGrow {
+  from { width:0; }
+  to   { width:100%; }
+}
+@keyframes borderGlow {
+  0%,100% { border-color:rgba(212,175,55,0.2); }
+  50%      { border-color:rgba(212,175,55,0.6); }
+}
+@keyframes sectionEntrance {
+  from { opacity:0; transform:translateY(80px); filter:blur(4px); }
+  to   { opacity:1; transform:translateY(0); filter:blur(0); }
+}
+@keyframes breatheZoom {
+  0%   { transform:scale(1.08); }
+  100% { transform:scale(1.06); }
+}

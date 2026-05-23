@@ -1,0 +1,134 @@
+/* ================================================
+   BEZZIE — HERO SECTION
+   ================================================ */
+
+#hero {
+  position:relative; width:100%; height:100vh; min-height:700px;
+  overflow:hidden; background:var(--midnight-deep);
+  display:flex; align-items:center; justify-content:center;
+}
+
+/* ── Video Layer 1 ── */
+#hero-video {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; z-index:1; transform:scale(1.08);
+  transform-origin:center center; will-change:transform;
+  animation: breatheZoom 15s ease-in-out infinite alternate;
+}
+
+/* ── Layer 2: Dark Gradient ── */
+.hero-ov-gradient {
+  position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:
+    linear-gradient(180deg, rgba(5,8,20,0.7) 0%, rgba(8,19,31,0.45) 35%, rgba(8,19,31,0.6) 70%, rgba(5,8,20,0.96) 100%),
+    radial-gradient(ellipse at 50% 50%, transparent 20%, rgba(5,8,20,0.65) 100%);
+}
+
+/* ── Layer 3: Teal Atmospheric ── */
+.hero-ov-teal {
+  position:absolute; inset:0; z-index:3; pointer-events:none;
+  background:
+    radial-gradient(ellipse at 25% 60%, rgba(19,40,71,0.5) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 35%, rgba(23,52,89,0.35) 0%, transparent 50%);
+  will-change:transform;
+}
+
+/* ── Layer 4: Canvas ── */
+#hero-canvas {
+  position:absolute; inset:0; z-index:4; pointer-events:none;
+  will-change:transform;
+}
+
+/* ── Depth Atmosphere Layer ── */
+.hero-depth-layer {
+  position:absolute;
+  inset:0;
+  z-index:4;
+  background: radial-gradient(circle at center, rgba(229,193,88,.08), transparent 70%);
+  mix-blend-mode:screen;
+  filter:blur(80px);
+  pointer-events:none;
+}
+
+/* ── Layer 5: Noise ── */
+.hero-ov-noise {
+  position:absolute; inset:0; z-index:5; pointer-events:none;
+  opacity:0.04;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+}
+
+/* ── Layer 6: Fog ── */
+.hero-ov-fog {
+  position:absolute; inset:0; z-index:6; pointer-events:none;
+  background:linear-gradient(0deg, rgba(5,8,20,0.9) 0%, rgba(8,19,31,0.3) 30%, transparent 60%);
+  will-change:transform;
+}
+
+/* ── Vignette Edges ── */
+.hero-vignette {
+  position:absolute; inset:0; z-index:6; pointer-events:none;
+  background:radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(5,8,20,0.7) 100%);
+}
+
+/* ── Layer 7: Removed ── */
+
+/* ── Layer 8: Content ── */
+.hero-content {
+  position:relative; z-index:8;
+  text-align:center;
+  max-width:1100px;
+  width:100%;
+  height: 100vh;
+  margin:auto;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+}
+.hero-title {
+  font-family:var(--font-display); font-weight:400;
+  font-size:clamp(5rem,13vw,12rem);
+  line-height:0.88; letter-spacing:0.04em;
+  overflow:hidden; margin-bottom:0;
+  display:flex; flex-direction:column; align-items:center;
+}
+.hero-title .line { display:block; overflow:hidden; }
+.hero-title .line span {
+  display:block;
+  animation:lineReveal 1.2s var(--ease-out) both;
+}
+.hero-title .line:nth-child(1) span {
+  animation-delay:0.5s;
+  font-weight:900;
+  transform:scaleX(0.92);
+  margin-bottom:-0.2rem;
+  background: linear-gradient(180deg, #FDECB0 0%, #E2C063 45%, #C29633 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3));
+}
+.hero-title .line:nth-child(2) span {
+  animation-delay:0.75s;
+}
+.hero-title .accent {
+  color:transparent;
+  background:linear-gradient(180deg, #FDECB0 0%, #D4AF37 50%, #B8860B 100%);
+  -webkit-background-clip:text;
+  font-family:var(--font-serif); font-style:italic; font-size:0.62em; letter-spacing:0.12em;
+  margin-top:0.5rem;
+  margin-bottom:1.5rem;
+  display:inline-block;
+  font-weight:400;
+}
+.hero-subtitle {
+  font-family:var(--font-serif); font-size:clamp(1.05rem,2.1vw,1.35rem);
+  font-weight:400; color:rgba(244,228,166,0.72); letter-spacing:0.04em;
+  margin:0 auto; margin-bottom: 2.5rem; line-height:1.6; max-width:520px; text-align:center;
+  animation:fadeSlideUp 1s var(--ease-out) 1.2s both;
+  font-style:italic;
+}
+.hero-ctas {
+  display:flex; align-items:center; gap:24px; flex-wrap:wrap; justify-content:center;
+  animation:fadeSlideUp 1s var(--ease-out) 1.5s both;
+}
+@media(max-width:768px) {
+  .hero-title { font-size:clamp(3rem,14vw,5rem); }
+}
