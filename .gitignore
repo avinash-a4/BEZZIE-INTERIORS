@@ -1,0 +1,26 @@
+# Videos
+assets/videos/
+*.mp4
+*.mov
+*.webm
+
+# System
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# Build
+dist/
+build/
+
+# Environment
+.env
+.env.local
+
+# VS Code
+.vscode/
