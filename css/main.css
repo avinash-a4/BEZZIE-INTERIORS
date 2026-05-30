@@ -228,6 +228,23 @@ body.hovered #cursor-ring { width:56px; height:56px; border-color:var(--gold-mid
 .btn-arrow { font-size:1rem; transition:transform 0.3s ease; }
 .btn-luxury:hover .btn-arrow { transform:translateX(4px); }
 
+.page-transition-veil {
+  position:fixed;
+  inset:0;
+  z-index:12000;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(212,175,55,0.16), transparent 28%),
+    linear-gradient(180deg, rgba(5,8,20,0), var(--midnight-deep) 42%, #020510);
+  opacity:0;
+  transform:translateY(100%);
+  transition:transform 0.55s var(--ease-out), opacity 0.45s ease;
+}
+.page-transition-veil.active {
+  opacity:1;
+  transform:translateY(0);
+}
+
 /* ── Reveal classes ── */
 .reveal { opacity:0; transform:translateY(50px); }
 .reveal-fade { opacity:0; }

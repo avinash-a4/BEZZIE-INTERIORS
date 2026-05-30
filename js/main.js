@@ -72,6 +72,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* Page transition for standalone offering experiences */
+  document.querySelectorAll('a[href$=".html"], a[href*=".html#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      const href = a.getAttribute('href');
+      if (!href || href === window.location.pathname.split('/').pop()) return;
+      e.preventDefault();
+      let veil = document.querySelector('.page-transition-veil');
+      if (!veil) {
+        veil = document.createElement('div');
+        veil.className = 'page-transition-veil';
+        document.body.appendChild(veil);
+      }
+      requestAnimationFrame(() => veil.classList.add('active'));
+      setTimeout(() => { window.location.href = href; }, 430);
+    });
+  });
+
   /* ── Hero init ── */
   Hero.init();
 
