@@ -95,7 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── WhatsApp ── */
   document.querySelectorAll('.whatsapp-link').forEach(el => {
-    el.href = 'https://wa.me/91XXXXXXXXXX?text=Hello%2C%20I%27m%20interested%20in%20a%20consultation%20with%20Bezzie%20Infra%20%26%20Interiors';
+    el.href = 'https://wa.me/918639060862';
+    el.target = '_blank';
+    el.rel = 'noopener noreferrer';
   });
 
   /* ── Stats counter animation ── */
