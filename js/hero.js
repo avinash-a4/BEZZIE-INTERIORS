@@ -63,8 +63,8 @@ const Hero = (() => {
   function onMouseMove(e) {
     mouse.x = e.clientX / window.innerWidth;
     mouse.y = e.clientY / window.innerHeight;
-    const dx = (mouse.x - 0.5) * 8;
-    const dy = (mouse.y - 0.5) * 4;
+    const dx = (mouse.x - 0.5) * 6;
+    const dy = (mouse.y - 0.5) * 3;
     const teal = document.querySelector('.hero-ov-teal');
     const fog  = document.querySelector('.hero-ov-fog');
     const portal = document.querySelector('.hero-portal');
