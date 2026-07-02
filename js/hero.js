@@ -9,14 +9,14 @@ const Hero = (() => {
     return {
       x: Utils.randomBetween(0, W),
       y: Utils.randomBetween(H * 0.2, H),
-      size: Utils.randomBetween(0.5, 2.5),
+      size: Utils.randomBetween(0.45, 2.2),
       speedX: Utils.randomBetween(-0.4, 0.4),
       speedY: Utils.randomBetween(-0.8, -0.2),
       opacity: 0,
-      maxOpacity: Utils.randomBetween(0.2, 0.8),
+      maxOpacity: Utils.randomBetween(0.26, 0.72),
       life: 0,
       maxLife: Utils.randomInt(120, 280),
-      hue: Utils.randomBetween(42, 55),
+      hue: Utils.randomBetween(40, 50),
     };
   }
 
@@ -26,9 +26,9 @@ const Hero = (() => {
     p.opacity = p.maxOpacity * fade;
     ctx.save();
     ctx.globalAlpha = p.opacity;
-    ctx.fillStyle = `hsl(${p.hue}, 80%, 65%)`;
-    ctx.shadowColor = `hsl(${p.hue}, 90%, 70%)`;
-    ctx.shadowBlur = 6;
+    ctx.fillStyle = `hsl(${p.hue}, 88%, 70%)`;
+    ctx.shadowColor = `hsl(${p.hue}, 96%, 74%)`;
+    ctx.shadowBlur = 8;
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
     ctx.fill();

@@ -111,21 +111,53 @@ body.hovered #cursor-ring { width:56px; height:56px; border-color:var(--gold-mid
   font-family:var(--font-display); font-size:1.52rem; font-weight:400;
   letter-spacing:0.22em;
   color:var(--gold-mid);
-  background:linear-gradient(105deg,#c79a32 0%,var(--gold-light) 24%,var(--gold-pale) 44%,var(--gold-mid) 66%,#f1dda0 82%,#cda43c 100%);
+  background:
+    linear-gradient(112deg, transparent 0%, transparent 38%, rgba(255,255,255,0.32) 47%, transparent 58%, transparent 100%),
+    linear-gradient(
+      180deg,
+      #fff7cf 0%,
+      #efd176 24%,
+      #d4af37 52%,
+      #a97008 100%
+    );
+  background-size:220% 100%, 100% 100%;
+  background-position:0% 50%, 0% 50%;
+  background-blend-mode:screen, normal;
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color:transparent;
-  text-shadow:0 0 8px rgba(212,175,55,0.22);
-  filter:drop-shadow(0 1px 0 rgba(244,228,166,0.12)) drop-shadow(0 0 3px rgba(212,175,55,0.12));
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.18),
+    0 0 9px rgba(255,213,103,0.2),
+    0 0 18px rgba(212,175,55,0.13),
+    0 5px 16px rgba(0,0,0,0.32);
+  filter:none;
+  text-rendering:geometricPrecision;
+  transition:text-shadow 0.45s ease, background-position 1.8s ease;
   white-space:nowrap;
 }
 .nav-logo span {
   color:inherit;
-  opacity:0.96;
-  background:linear-gradient(105deg,var(--gold-light) 0%,var(--gold-pale) 42%,var(--gold-mid) 72%,#cda43c 100%);
+  opacity:1;
+  background:
+    linear-gradient(112deg, transparent 0%, transparent 38%, rgba(255,255,255,0.32) 47%, transparent 58%, transparent 100%),
+    linear-gradient(
+      180deg,
+      #fff7cf 0%,
+      #efd176 24%,
+      #d4af37 52%,
+      #a97008 100%
+    );
+  background-size:220% 100%, 100% 100%;
+  background-position:0% 50%, 0% 50%;
+  background-blend-mode:screen, normal;
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color:transparent;
+}
+.nav-logo:hover,
+.nav-logo:hover span {
+  animation:goldShimmer 18s ease-in-out infinite;
 }
 .nav-links { display:flex; align-items:center; gap:2.5rem; list-style:none; }
 .nav-links a {
